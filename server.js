@@ -7,8 +7,8 @@ require("dotenv").config();
 const app = express();
 const port = process.env.PORT || 3000;
 
-const RECEIVER_EMAIL = "chasemallor@gmail.com";
-const SENDER_EMAIL = "pipespluslongisland@gmail.com";
+const RECEIVER_EMAIL = process.env.LEAD_RECEIVER_EMAIL || "chasemallor@gmail.com";
+const SENDER_EMAIL = process.env.EMAIL_SENDER || "chasemallor@gmail.com";
 
 app.disable("x-powered-by");
 app.use(express.json({ limit: "100kb" }));

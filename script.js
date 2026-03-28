@@ -109,7 +109,8 @@ async function handleLeadSubmit(event) {
     });
 
     if (!response.ok) {
-      throw new Error("Unable to send request");
+      const errorResult = await response.json().catch(() => ({}));
+      throw new Error(errorResult.message || "Unable to send request");
     }
 
     form.reset();
@@ -118,7 +119,8 @@ async function handleLeadSubmit(event) {
       window.setTimeout(closePopup, 1200);
     }
   } catch (error) {
-    showStatus(form, "There was an issue sending your request. Please call us now.", true);
+    const message = error instanceof Error ? error.message : "There was an issue sending your request. Please call us now.";
+    showStatus(form, message, true);
   } finally {
     if (submitButton instanceof HTMLButtonElement) {
       submitButton.disabled = false;

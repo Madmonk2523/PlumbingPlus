@@ -1,7 +1,7 @@
 const nodemailer = require("nodemailer");
 
-const RECEIVER_EMAIL = "chasemallor@gmail.com";
-const SENDER_EMAIL = "pipespluslongisland@gmail.com";
+const RECEIVER_EMAIL = process.env.LEAD_RECEIVER_EMAIL || "chasemallor@gmail.com";
+const SENDER_EMAIL = process.env.EMAIL_SENDER || "chasemallor@gmail.com";
 
 function sanitize(value) {
   return String(value || "").replace(/[<>]/g, "").trim();

@@ -7,7 +7,7 @@ require("dotenv").config();
 const app = express();
 const port = process.env.PORT || 3000;
 
-const RECEIVER_EMAIL = "pipespluslongisland@gmail.com";
+const RECEIVER_EMAIL = "chasemallor@gmail.com";
 const SENDER_EMAIL = "pipespluslongisland@gmail.com";
 
 app.disable("x-powered-by");

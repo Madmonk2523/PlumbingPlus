@@ -1,6 +1,6 @@
 const nodemailer = require("nodemailer");
 
-const RECEIVER_EMAIL = "pipespluslongisland@gmail.com";
+const RECEIVER_EMAIL = "chasemallor@gmail.com";
 const SENDER_EMAIL = "pipespluslongisland@gmail.com";
 
 function sanitize(value) {

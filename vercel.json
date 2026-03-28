@@ -22,11 +22,18 @@
       "use": "@vercel/static"
     },
     {
+      "src": "background.jpg",
+      "use": "@vercel/static"
+    },
+    {
       "src": "Nice plumbing text.jpg",
       "use": "@vercel/static"
     }
   ],
   "routes": [
+    {
+      "handle": "filesystem"
+    },
     {
       "src": "/api/lead",
       "dest": "/api/lead.js"
